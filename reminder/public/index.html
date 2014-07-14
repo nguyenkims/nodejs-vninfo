@@ -1,0 +1,23 @@
+<!doctype html>
+
+<html ng-app="reminderApp">
+<head>
+	<title> Reminder app </title>	
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+	<script src="client.js"></script>
+</head>
+<body ng-controller="mainCtrl">
+
+	<div ng-repeat="re in reminderList">
+		<div> Text : {{re.text}} </div>
+		<div> Time : {{re.time}}	</div>
+	</div>
+
+	<form ng-submit="create(re)">
+		Text : <input type="text" ng-model="re.text">
+		Time to remind : <input type="datetime" ng-model="re.time">
+		<input type="submit" value="Create" >
+	</form>
+
+</body>
+</html>

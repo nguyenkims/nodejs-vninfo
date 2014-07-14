@@ -1,0 +1,4 @@
+curl http://localhost:8080/api/reminder/list
+
+curl -X POST -H "Content-Type: application/json" -d '{"text":"xyz","time":"xyz"}' http://localhost:8080/api/reminder/create
+
