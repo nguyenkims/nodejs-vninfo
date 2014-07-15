@@ -10,11 +10,11 @@ arguments.forEach(function(element, index, array){
 	console.log(element + ":" + countLineSynchro(element));
 });
 
-function countLineSynchro(file){
-	// Benching purpose
-	var milliSecs = new Date().getTime() - now;
-	console.log("read " + file + " at +" + milliSecs + " ms");
+// Benching purpose
+var milliSecs = new Date().getTime() - now;
+console.log("total time:" +  milliSecs + " ms");
 
+function countLineSynchro(file){	
 	var contents = fs.readFileSync(file, "utf8");
 	return contents.split('\n').length;
 }
