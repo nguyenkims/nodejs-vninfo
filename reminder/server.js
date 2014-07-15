@@ -12,7 +12,7 @@ app.get('/api/reminder/list', function(req, res){
 })
 
 app.post('/api/reminder/create', function(req, res){
-	var reminder = {text:req.body.text, time:req.body.time};
+	var reminder = {text:req.body.text, time:req.body.time, mail:req.body.mail};
 	l(reminder);
 	reminders.push(reminder);
 	res.json(reminders);
