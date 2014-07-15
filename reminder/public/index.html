@@ -11,7 +11,7 @@
 	<div ng-repeat="re in reminderList">
 		<div> Text : {{re.text}} </div>
 		<div> Remind in {{getMinuteDiff(re.time)}} mins	</div>
-		<div> The reminder will be sent to {{re.mail}} mins	</div>
+		<div> The reminder will be sent to {{re.mail}} </div>
 	</div>
 
 	<form ng-submit="create(toCreate)">
