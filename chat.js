@@ -3,7 +3,6 @@ var net = require('net');
 var socketList = [];
 var server = net.createServer(function(socket){
 	socketList.push(socket);
-	debugger;
 	socket.write('Welcome \n');
 
 	socket.on('data', function(d){
