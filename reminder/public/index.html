@@ -2,24 +2,45 @@
 
 <html ng-app="reminderApp">
 <head>
-	<title> Reminder app </title>	
+	<title> Reminder app </title>
+
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
 	<script src="client.js"></script>
 </head>
 <body ng-controller="mainCtrl">
-
-	<div ng-repeat="re in reminderList">
-		<div> Text : {{re.text}} </div>
-		<div> Remind in {{getMinuteDiff(re.time)}} mins	</div>
-		<div> The reminder will be sent to {{re.mail}} </div>
+	<div class="col-md-4 col-sm-4">
+		<form ng-submit="create(toCreate)">
+			<div class="form-group">
+				<label>Text</label>
+				<input class="form-control" type="text" ng-model="toCreate.text">
+			</div>
+			<div class="form-group">
+				<label>Remind me in </label>
+				<div class="input-group">
+					<input class="form-control" type="number" ng-model="toCreate.nbMins">
+					<span class="input-group-addon">minutes</span>
+				</div>
+			</div>
+			<div class="form-group">
+				<label>Email </label>
+				<input type="email" class="form-control" ng-model="toCreate.mail">
+			</div>
+			<input type="submit" class="btn btn-default" value="Create" >
+		</form>
 	</div>
-
-	<form ng-submit="create(toCreate)">
-		Text : <input type="text" ng-model="toCreate.text">
-		Remind me in minutes : <input type="number" ng-model="toCreate.nbMins">
-		Email: <input type="email" ng-model="toCreate.mail">
-		<input type="submit" value="Create" >
-	</form>
-
+	<div class="col-md-8 col-sm-8">
+		<div ng-repeat="re in reminderList" class="alert alert-info">
+			<h3> {{re.text}} </h3>
+			<p>
+				<span class="glyphicon glyphicon-time"></span> In {{getMinuteDiff(re.time)}} mins
+			</p>
+			<p>
+				<span class="glyphicon glyphicon-envelope"></span> {{re.mail}}
+			</p>
+		</div>
+	</div>
 </body>
 </html>
