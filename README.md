@@ -1,9 +1,7 @@
 nodejs-vninfo
 =============
 
-Demo code for the VN-INFO meetup on Node.js
-
-These are the slides used at VN-INFO meetup on 16 July 2014.
+Demo code for the VN-INFO meetup on Node.js on 16 July 2014.
 This meetup is the 2nd one in the Javascript serie we organized.
 
 The slides can be found at http://goo.gl/wFi860
