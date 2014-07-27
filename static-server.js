@@ -1,3 +1,8 @@
+// A static server serving files from the current folder 
+// The file path is same as the url path.
+// Run 'node static-server' then in another console, 
+// 'curl localhost:10000/LICENSE' will return the content of LICENSE
+
 var http = require('http');
 var fs = require('fs');
 var l = console.log;

@@ -1,13 +1,11 @@
-// Count lines for each files given in argument
-// Usage
-// node countLineAsync file1 file2 file3 ...
+// Same as countLineSync but written in asyn mode.
 
 var fs = require('fs');
-var arguments = process.argv.slice(2);
+var args = process.argv.slice(2);
 var now = new Date();
-var remains = arguments.length; 
+var remains = args.length; 
 
-arguments.forEach(function(element, index, array){
+args.forEach(function(element, index, array){
 	countLine(element);
 });
 

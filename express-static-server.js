@@ -1,5 +1,7 @@
-// First, install express
-// npm install express
+// Same as static-server but this time, use 'express' module instead.
+// To run this example, you need to install express by typing:
+// 'npm install express'
+
 var express = require('express');
 var app = express();
 
